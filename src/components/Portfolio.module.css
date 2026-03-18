@@ -1,0 +1,113 @@
+.header {
+    margin-bottom: 4rem;
+}
+
+.portfolioGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 3rem;
+}
+
+.portfolioCard {
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    border-radius: 12px;
+    background: var(--bg-surface);
+}
+
+.projectImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: grayscale(80%) contrast(1.2);
+    /* Creates a dramatic vibe, reveals on hover */
+}
+
+.portfolioCard:hover .projectImage {
+    transform: scale(1.05);
+    filter: grayscale(0%) contrast(1);
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 3rem;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.portfolioCard:hover .overlay {
+    opacity: 1;
+}
+
+.overlayContent {
+    transform: translateY(20px);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolioCard:hover .overlayContent {
+    transform: translateY(0);
+}
+
+.projectTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: hsl(var(--text-main));
+    margin-bottom: 0.5rem;
+}
+
+.projectDesc {
+    font-size: 1rem;
+    color: hsl(var(--text-muted));
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.tagsContainer {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.tag {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: hsl(var(--accent-glow));
+    padding: 0.4rem 0.8rem;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(var(--accent-glow), 0.3);
+    border-radius: 100px;
+}
+
+@media (max-width: 768px) {
+    .portfolioGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .projectImage {
+        filter: grayscale(0%) contrast(1);
+    }
+
+    .overlay {
+        opacity: 1;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, transparent 80%);
+        padding: 2rem;
+    }
+
+    .overlayContent {
+        transform: translateY(0);
+    }
+}

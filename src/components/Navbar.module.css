@@ -1,0 +1,104 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 1.5rem 0;
+}
+
+.navbar.scrolled {
+    padding: 1rem 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.navContainer {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: hsl(var(--text-main));
+    letter-spacing: -0.05em;
+}
+
+.desktopNav {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.navLink {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: hsl(var(--text-muted));
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.navLink:hover {
+    color: hsl(var(--text-main));
+}
+
+.mobileToggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: hsl(var(--text-main));
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.ctaDesktop {
+    padding: 0.75rem 2rem;
+    font-size: 0.9rem;
+}
+
+.mobileMenu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: rgba(5, 5, 5, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+    z-index: 90;
+    padding: 2rem;
+}
+
+.mobileNavList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.mobileNavLink {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: hsl(var(--text-main));
+}
+
+@media (max-width: 768px) {
+
+    .desktopNav,
+    .ctaDesktop {
+        display: none;
+    }
+
+    .mobileToggle {
+        display: block;
+    }
+}

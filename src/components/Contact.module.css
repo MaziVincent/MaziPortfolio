@@ -1,0 +1,128 @@
+.contactWrapper {
+    display: flex;
+    gap: 6rem;
+    align-items: center;
+}
+
+.contactInfo {
+    flex: 1;
+}
+
+.title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    margin-bottom: 2rem;
+    color: hsl(var(--text-main));
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: hsl(var(--text-muted));
+    margin-bottom: 4rem;
+    max-width: 500px;
+}
+
+.directContact {
+    display: flex;
+    gap: 4rem;
+}
+
+.contactItem h5 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: hsl(var(--text-dim));
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+}
+
+.contactItem a,
+.contactItem p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: hsl(var(--text-main));
+    transition: color 0.3s ease;
+}
+
+.contactItem a:hover {
+    color: hsl(var(--accent-glow));
+}
+
+.formContainer {
+    flex: 1;
+}
+
+.contactForm {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: hsl(var(--text-main));
+}
+
+.formControl {
+    width: 100%;
+    padding: 1rem 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border-subtle);
+    color: hsl(var(--text-main));
+    font-family: inherit;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.formControl:focus {
+    outline: none;
+    border-color: hsl(var(--accent-glow));
+    box-shadow: 0 1px 0 0 hsl(var(--accent-glow));
+}
+
+.formControl::placeholder {
+    color: hsl(var(--text-dim));
+    font-weight: 300;
+}
+
+.submitBtn {
+    margin-top: 1rem;
+    align-self: flex-start;
+}
+
+@media (max-width: 1024px) {
+    .contactWrapper {
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    .contactInfo,
+    .formContainer {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .directContact {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .contactForm {
+        padding: 2rem 1.5rem;
+    }
+}

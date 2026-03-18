@@ -1,0 +1,97 @@
+.servicesSection {
+    background: radial-gradient(circle at bottom left, rgba(var(--accent-glow), 0.05) 0%, transparent 50%);
+}
+
+.header {
+    margin-bottom: 4rem;
+}
+
+.servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2.5rem;
+}
+
+.serviceCard {
+    padding: 3rem 2.5rem;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.serviceCard:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(var(--accent-glow), 0.3);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.iconWrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background: rgba(var(--accent-glow), 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    transition: all 0.4s ease;
+}
+
+.icon {
+    font-size: 1.8rem;
+    color: hsl(var(--accent-glow));
+}
+
+.serviceCard:hover .iconWrapper {
+    background: hsl(var(--accent-glow));
+}
+
+.serviceCard:hover .icon {
+    color: hsl(var(--bg-base));
+}
+
+.title {
+    font-size: 1.5rem;
+    color: hsl(var(--text-main));
+    margin-bottom: 1rem;
+}
+
+.desc {
+    color: hsl(var(--text-muted));
+    line-height: 1.7;
+    font-size: 1.05rem;
+    flex-grow: 1;
+    margin-bottom: 2.5rem;
+}
+
+.techStack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.techBadge {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: hsl(var(--text-dim));
+    background: var(--bg-surface);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-subtle);
+    transition: all 0.3s ease;
+}
+
+.serviceCard:hover .techBadge {
+    color: hsl(var(--text-main));
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+    .servicesGrid {
+        grid-template-columns: 1fr;
+    }
+}

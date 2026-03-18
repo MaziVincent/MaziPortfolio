@@ -1,0 +1,165 @@
+.sidebar {
+    width: var(--sidebar-width);
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    border-right: 1px solid var(--glass-border);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 50;
+    transition: transform 0.3s ease;
+}
+
+.logo {
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.logo a {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: hsl(var(--text-main));
+    display: inline-block;
+    position: relative;
+    padding: 10px 15px;
+}
+
+.logoHighlight {
+    font-family: 'Clicker Script', cursive, 'Outfit', sans-serif;
+    color: hsl(var(--accent-primary));
+    font-size: 3rem;
+}
+
+.logo a::before,
+.logo a::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 4px solid hsl(var(--accent-primary));
+}
+
+.logo a::before {
+    bottom: 0;
+    left: 0;
+    border-top: none;
+    border-right: none;
+}
+
+.logo a::after {
+    top: 0;
+    right: 0;
+    border-bottom: none;
+    border-left: none;
+}
+
+.nav {
+    margin-top: 4rem;
+}
+
+.nav li {
+    margin-bottom: 1.5rem;
+}
+
+.navLink {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: hsl(var(--text-muted));
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.navLink::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(var(--accent-primary), 0.1), transparent);
+    transition: width 0.3s ease;
+    z-index: -1;
+    border-radius: 8px;
+}
+
+.navLink:hover {
+    color: hsl(var(--text-main));
+}
+
+.navLink:hover::before {
+    width: 100%;
+}
+
+.navLink.active {
+    color: hsl(var(--accent-primary));
+    font-weight: 600;
+}
+
+.icon {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+.mobileToggle {
+    display: none;
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 60;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    color: hsl(var(--text-main));
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.overlay {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .mobileToggle {
+        display: flex;
+    }
+
+    .overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
+        z-index: 40;
+    }
+}

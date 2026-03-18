@@ -1,0 +1,104 @@
+.aboutHeader {
+    max-width: 800px;
+    margin-bottom: 6rem;
+}
+
+.philosophy {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    line-height: 1.6;
+    color: hsl(var(--text-muted));
+    font-weight: 300;
+}
+
+.experienceGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.expCard {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Accent Reveal */
+.expCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0%;
+    background: hsl(var(--accent-glow));
+    transition: height 0.4s ease;
+}
+
+.expCard:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.expCard:hover::before {
+    height: 100%;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.icon {
+    font-size: 2rem;
+    color: hsl(var(--text-dim));
+    transition: color 0.4s ease;
+}
+
+.expCard:hover .icon {
+    color: hsl(var(--accent-glow));
+}
+
+.period {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: hsl(var(--text-muted));
+    text-transform: uppercase;
+    padding: 0.4rem 0.8rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 100px;
+}
+
+.role {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: hsl(var(--text-main));
+    margin-bottom: 0.25rem;
+}
+
+.company {
+    font-size: 1.1rem;
+    color: hsl(var(--accent-glow));
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.desc {
+    color: hsl(var(--text-muted));
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+@media (max-width: 768px) {
+    .experienceGrid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
