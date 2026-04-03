@@ -18,20 +18,20 @@ const projects = [
 		tags: ["React", ".Net Core", "GCP", "Redis", "Flutter"],
 	},
 	{
-		img: "/v1_classic/images/portfolio/Accave thumbnail.png",
+		img: "/v1_classic/images/portfolio/Accave.png",
 		title: "Accave",
 		desc: "Accave is an edtech platform transforming how secondary school students learn through engaging video lessons, notes, and interactive quizzes aligned with the curriculum.",
 		tags: ["C# .NET","Angular", "Redis", "SQL Server", "Kotlin Android", "Swift IOS"],
 	},
 
 	{
-		img: "/v1_classic/images/portfolio/ListaccIncubator [Recovered].jpg",
+		img: "/v1_classic/images/portfolio/ListaccTech.jpg",
 		title: "Listacc Tech Academy",
 		desc: "Enterprise Learning Platform for Tech Skills.",
 		tags: ["React", "NodeJS", "TypeScript", "Postgres", "Redis", "DailyIO", "GCP"],
 	},
 	{
-		img: "/v1_classic/images/portfolio/School Cater Bag.jpg",
+		img: "/v1_classic/images/portfolio/SchoolCater.jpg",
 		title: "School Cater",
 		desc: "High-performance e-commerce platform.",
 		tags: ["SAAS", "School Management", "C# .Net", "Angular", "SQL Server"],

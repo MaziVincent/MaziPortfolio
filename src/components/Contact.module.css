@@ -27,7 +27,8 @@
 
 .directContact {
     display: flex;
-    gap: 4rem;
+    flex-wrap: wrap;
+    gap: 2.5rem 4rem;
 }
 
 .contactItem h5 {
@@ -46,6 +47,7 @@
     font-weight: 500;
     color: hsl(var(--text-main));
     transition: color 0.3s ease;
+    white-space: nowrap;
 }
 
 .contactItem a:hover {
@@ -120,6 +122,11 @@
     .directContact {
         flex-direction: column;
         gap: 2rem;
+    }
+
+    .contactItem a,
+    .contactItem p {
+        font-size: 1rem;
     }
 
     .contactForm {
