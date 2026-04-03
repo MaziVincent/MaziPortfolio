@@ -6,22 +6,28 @@ import styles from './Services.module.css';
 
 const services = [
     {
-        title: 'Backend Architecture',
-        desc: 'Designing robust, horizontally scalable APIs and microservices. I build systems capable of handling complex transactions with high throughput.',
+        title: "Backend Architecture",
+        desc: "Designing robust, horizontally scalable APIs and microservices. I build systems capable of handling complex transactions with high throughput.",
         icon: FaServer,
-        tech: ['Node.js', 'C# .NET', 'PostgreSQL', 'Redis']
+        tech: ["Node.js", "NestJS", "C# .NET", "PostgreSQL", "SQL Server", "Redis"],
     },
     {
-        title: 'Mobile Engineering',
-        desc: 'Creating fluid, cross-platform mobile experiences that feel native. Bridging the gap between beautiful UI and complex device features.',
+        title: "Mobile Engineering",
+        desc: "Creating fluid, cross-platform mobile experiences that feel native. Bridging the gap between beautiful UI and complex device features.",
         icon: FaMobileAlt,
-        tech: ['Flutter', 'Dart', 'React Native']
+        tech: ["Flutter", "Dart", "React Native"],
     },
     {
-        title: 'System Integration',
-        desc: 'Seamlessly connecting disperate data sources, legacy systems, and modern SaaS platforms into a unified, secure digital ecosystem.',
+        title: "System Integration",
+        desc: "Seamlessly connecting disparate data sources, legacy systems, and modern SaaS platforms into a unified, secure digital ecosystem.",
         icon: FaCodeBranch,
-        tech: ['GraphQL', 'REST', 'Webhooks', 'OAuth']
+        tech: ["GraphQL", "REST", "Webhooks", "OAuth"],
+    },
+    {
+        title: "Front-End Development",
+        desc: "Building responsive, performant web applications with modern tooling. Converting designs into interactive experiences with attention to accessibility and performance.",
+        icon: FaCodeBranch,
+        tech: ["React", "NextJS", "TypeScript", "Tailwind CSS"],
     }
 ];
 

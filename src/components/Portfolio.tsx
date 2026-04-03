@@ -5,10 +5,43 @@ import Image from 'next/image';
 import styles from './Portfolio.module.css';
 
 const projects = [
-    { img: '/v1_classic/images/portfolio/Accave thumbnail.png', title: 'Accave', desc: 'Secure authentication & data management platform.', tags: ['Backend API', 'PostgreSQL'] },
-    { img: '/v1_classic/images/portfolio/ListaccIncubator [Recovered].jpg', title: 'Listacc Incubator', desc: 'Enterprise learning management system.', tags: ['React', 'Enterprise'] },
-    { img: '/v1_classic/images/portfolio/School Cater Bag.jpg', title: 'School Cater', desc: 'High-performance e-commerce platform.', tags: ['Full Stack', 'E-Commerce'] },
-    { img: '/v1_classic/images/portfolio/Incubator LOGO.jpg', title: 'Incubator Platform', desc: 'Scalable system architecture for startups.', tags: ['System Architecture'] },
+	{
+		img: "/v1_classic/images/portfolio/Shoppergrow.png",
+		title: "ShopperGrow",
+		desc: "A leading, cloud-based, multi-channel commerce platform that provides software-as-a-service (SaaS) solutions to create, manage, and scale online and in-person retail stores.",
+		tags: ["Nextjs", "NodeJS","Typescript", "PostgresSQL", "GCP", "Redis"],
+	},
+	{
+		img: "/v1_classic/images/portfolio/TextWhitebkgd.png",
+		title: "Lifepadi",
+		desc: "Logistics and Errands Platform",
+		tags: ["React", ".Net Core", "GCP", "Redis", "Flutter"],
+	},
+	{
+		img: "/v1_classic/images/portfolio/Accave thumbnail.png",
+		title: "Accave",
+		desc: "Accave is an edtech platform transforming how secondary school students learn through engaging video lessons, notes, and interactive quizzes aligned with the curriculum.",
+		tags: ["C# .NET","Angular", "Redis", "SQL Server", "Kotlin Android", "Swift IOS"],
+	},
+
+	{
+		img: "/v1_classic/images/portfolio/ListaccIncubator [Recovered].jpg",
+		title: "Listacc Tech Academy",
+		desc: "Enterprise Learning Platform for Tech Skills.",
+		tags: ["React", "NodeJS", "TypeScript", "Postgres", "Redis", "DailyIO", "GCP"],
+	},
+	{
+		img: "/v1_classic/images/portfolio/School Cater Bag.jpg",
+		title: "School Cater",
+		desc: "High-performance e-commerce platform.",
+		tags: ["SAAS", "School Management", "C# .Net", "Angular", "SQL Server"],
+	}
+	// {
+	// 	img: "/v1_classic/images/portfolio/Incubator LOGO.jpg",
+	// 	title: "Incubator Platform",
+	// 	desc: "Scalable system architecture for startups.",
+	// 	tags: ["System Architecture"],
+	// },
 ];
 
 export default function Portfolio() {

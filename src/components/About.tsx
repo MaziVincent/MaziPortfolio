@@ -2,28 +2,42 @@
 
 import { motion } from 'framer-motion';
 import styles from './About.module.css';
-import { FaServer, FaCode, FaRocket } from 'react-icons/fa';
+import { FaServer, FaCode, FaRocket, FaShoppingCart, FaMotorcycle, FaBook } from 'react-icons/fa';
 
 const experiences = [
     {
-        role: 'Backend Developer',
-        company: 'Accave',
-        period: '2020 — Present',
-        desc: 'Engineering scalable authentication and database architecture for high-traffic environments.',
-        icon: FaServer,
+        role: 'Chief Technical Officer',
+        company: 'ShopperGrow',
+        period: '2026 — Present',
+        desc: 'Designing and implementing scalable backend infrastructure and database systems for high-volume transaction environments.',
+        icon: FaShoppingCart,
     },
     {
-        role: 'Technical Director',
-        company: 'Listacc Academy',
+        role: 'Chief Technical Officer',
+        company: 'Lifepadi',
+        period: '2024 — 2025',
+        desc: 'Architected a robust logistics platform engineered for performance and reliability at scale.',
+        icon: FaMotorcycle,
+    },
+    {
+        role: 'Backend Developer',
+        company: 'Accave',
+        period: '2020 — 2024',
+        desc: 'Built secure authentication systems and optimized database architectures to handle high-traffic demands.',
+        icon: FaBook,
+    },
+    {
+        role: 'Director',
+        company: 'Listacc Tech Academy',
         period: '2019 — Present',
-        desc: 'Leading engineering teams and architecting modern curriculum for enterprise training.',
+        desc: 'Mentoring technical teams and developing industry-aligned training programs for enterprise professionals.',
         icon: FaRocket,
     },
     {
         role: 'Software Engineer',
         company: 'SchoolCater',
         period: '2018 — 2019',
-        desc: 'Developed core monolithic APIs and optimized UI rendering performance.',
+        desc: 'Built core APIs and enhanced application performance through frontend optimization.',
         icon: FaCode,
     },
 ];
