@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+
+export const runtime = "edge";
 
 export async function POST(req: NextRequest) {
 	try {
@@ -12,28 +13,35 @@ export async function POST(req: NextRequest) {
 			);
 		}
 
-		const transporter = nodemailer.createTransport({
-			service: "gmail",
-			auth: {
-				user: process.env.EMAIL_USER,
-				pass: process.env.EMAIL_PASS,
+		const res = await fetch("https://api.resend.com/emails", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
 			},
+			body: JSON.stringify({
+				from: "Portfolio Contact <onboarding@resend.dev>",
+				to: "georgevincent35@gmail.com",
+				reply_to: email,
+				subject: `Portfolio Contact from ${name}`,
+				html: `
+					<h3>New message from your portfolio</h3>
+					<p><strong>Name:</strong> ${name}</p>
+					<p><strong>Email:</strong> ${email}</p>
+					<p><strong>Message:</strong></p>
+					<p>${message.replace(/\n/g, "<br>")}</p>
+				`,
+			}),
 		});
 
-		await transporter.sendMail({
-			from: `"${name}" <${process.env.EMAIL_USER}>`,
-			to: process.env.EMAIL_USER,
-			replyTo: email,
-			subject: `Portfolio Contact from ${name}`,
-			text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-			html: `
-                <h3>New message from your portfolio</h3>
-                <p><strong>Name:</strong> ${name}</p>
-                <p><strong>Email:</strong> ${email}</p>
-                <p><strong>Message:</strong></p>
-                <p>${message.replace(/\n/g, "<br>")}</p>
-            `,
-		});
+		if (!res.ok) {
+			const err = await res.json();
+			console.error("Resend error:", err);
+			return NextResponse.json(
+				{ error: "Failed to send message." },
+				{ status: 500 },
+			);
+		}
 
 		return NextResponse.json({ success: true });
 	} catch (error) {
